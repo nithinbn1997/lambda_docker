@@ -1,4 +1,4 @@
-FROM python:3.10
+FROM python:3.9.16
 
 WORKDIR /app
 
@@ -9,4 +9,4 @@ COPY . .
 
 EXPOSE 8001
 
-CMD ["uvicorn", "lambda_function:app", "--host", "0.0.0.0", "--port", "8001"]
+CMD ["uvicorn", "app.lambda_function:app", "--host", "0.0.0.0", "--port", "8001"]
