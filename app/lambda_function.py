@@ -1,5 +1,5 @@
 import json
-from controller.user_management import validate_client
+from app.controller.user_management import validate_client
 from fastapi import FastAPI, Header, HTTPException,Request
 
 app = FastAPI()
