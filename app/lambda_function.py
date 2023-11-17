@@ -55,6 +55,10 @@ def validate(headers):
 @app.post("/ec2/api/oauth/token")
 async def validate_token(headers: Request):
     try:
+        authorization = headers.headers.get('Authorization')
+        if not authorization:
+            raise Exception('Missing Authorization header')
+        
         headers_dict = headers.headers
         print(headers_dict,'headers')
         result = validate(headers_dict)
